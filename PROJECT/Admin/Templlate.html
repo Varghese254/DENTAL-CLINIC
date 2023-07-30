@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<p>{% load static %}<br />
+</p>
+<p>&lt;!DOCTYPE html&gt;<br />
+  &lt;html lang=&quot;en&quot;&gt;<br />
+  &lt;head&gt;<br />
+  &lt;!-- Required meta tags --&gt;<br />
+  &lt;meta charset=&quot;utf-8&quot;&gt;<br />
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;<br />
+  &lt;title&gt;BackStage-Admin&lt;/title&gt;<br />
+  &lt;!-- plugins:css --&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/vendors/mdi/css/materialdesignicons.min.css' %}&quot;&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/vendors/flag-icon-css/css/flag-icon.min.css' %}&quot;&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/vendors/css/vendor.bundle.base.css' %}&quot;&gt;<br />
+  &lt;!-- endinject --&gt;<br />
+  &lt;!-- Plugin css for this page --&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/vendors/font-awesome/css/font-awesome.min.css' %}&quot; /&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/vendors/bootstrap-datepicker/bootstrap-datepicker.min.css' %}&quot;&gt;<br />
+  &lt;!-- End plugin css for this page --&gt;<br />
+  &lt;!-- inject:css --&gt;<br />
+  &lt;!-- endinject --&gt;<br />
+  &lt;!-- Layout styles --&gt;<br />
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'Admin/assets/css/style.css' %}&quot;&gt;</p>
+<p> &lt;link rel=&quot;stylesheet&quot; href=&quot;{% static 'form.css' %}&quot;&gt;<br />
+  &lt;!-- End layout styles --&gt;<br />
+  &lt;link rel=&quot;shortcut icon&quot; href=&quot;{% static 'Admin/assets/images/favicon.png' %}&quot; /&gt;<br />
+  &lt;/head&gt;<br />
+  &lt;body&gt;<br />
+  &lt;div class=&quot;container-scroller&quot;&gt;<br />
+  &lt;!-- partial:partials/_navbar.html --&gt;<br />
+  &lt;nav class=&quot;navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row&quot;&gt;<br />
+  &lt;div class=&quot;text-center navbar-brand-wrapper d-flex align-items-center justify-content-center&quot;&gt;<br />
+  &lt;a class=&quot;navbar-brand brand-logo&quot; href=&quot;index.html&quot;&gt;&lt;img src=&quot;{% static 'Admin/assets/images/logo.svg' %}&quot; alt=&quot;logo&quot; /&gt;&lt;/a&gt;<br />
+  &lt;a class=&quot;navbar-brand brand-logo-mini&quot; href=&quot;index.html&quot;&gt;&lt;img src=&quot;{% static 'Admin/assets/images/logo-mini.svg' %}&quot; alt=&quot;logo&quot; /&gt;&lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;navbar-menu-wrapper d-flex align-items-stretch&quot;&gt;<br />
+  &lt;button class=&quot;navbar-toggler navbar-toggler align-self-center&quot; type=&quot;button&quot; data-toggle=&quot;minimize&quot;&gt;<br />
+  &lt;span class=&quot;mdi mdi-menu&quot;&gt;&lt;/span&gt;<br />
+  &lt;/button&gt;<br />
+  &lt;div class=&quot;search-field d-none d-xl-block&quot;&gt;<br />
+  &lt;form class=&quot;d-flex align-items-center h-100&quot; action=&quot;#&quot;&gt;<br />
+  &lt;div class=&quot;input-group&quot;&gt;<br />
+  &lt;div class=&quot;input-group-prepend bg-transparent&quot;&gt;<br />
+  &lt;i class=&quot;input-group-text border-0 mdi mdi-magnify&quot;&gt;&lt;/i&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;input type=&quot;text&quot; class=&quot;form-control bg-transparent border-0&quot; placeholder=&quot;Search products&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/form&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;ul class=&quot;navbar-nav navbar-nav-right&quot;&gt;<br />
+  &lt;li class=&quot;nav-item  dropdown d-none d-md-block&quot;&gt;<br />
+  &lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;reportDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt; Reports &lt;/a&gt;<br />
+  &lt;div class=&quot;dropdown-menu navbar-dropdown&quot; aria-labelledby=&quot;reportDropdown&quot;&gt;<br />
+  &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-file-pdf mr-2&quot;&gt;&lt;/i&gt;PDF &lt;/a&gt;<br />
+  &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+  &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-file-excel mr-2&quot;&gt;&lt;/i&gt;Excel &lt;/a&gt;<br />
+  &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+  &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-file-word mr-2&quot;&gt;&lt;/i&gt;doc &lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item  dropdown d-none d-md-block&quot;&gt;<br />
+  &lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;projectDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt; Projects &lt;/a&gt;<br />
+  &lt;div class=&quot;dropdown-menu navbar-dropdown&quot; aria-labelledby=&quot;projectDropdown&quot;&gt;<br />
+  &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-eye-outline mr-2&quot;&gt;&lt;/i&gt;View Project &lt;/a&gt;<br />
+  &lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+  &lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-pencil-outline mr-2&quot;&gt;&lt;/i&gt;Edit Project &lt;/a&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/li&gt;</p>
+<p>&lt;li class=&quot;nav-item nav-language dropdown d-none d-md-block&quot;&gt;<br />
+&lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;languageDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;<br />
+&lt;div class=&quot;nav-language-icon&quot;&gt;<br />
+&lt;i class=&quot;flag-icon flag-icon-us&quot; title=&quot;us&quot; id=&quot;us&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;nav-language-text&quot;&gt;<br />
+&lt;p class=&quot;mb-1 text-black&quot;&gt;English&lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-menu navbar-dropdown&quot; aria-labelledby=&quot;languageDropdown&quot;&gt;<br />
+&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+&lt;div class=&quot;nav-language-icon mr-2&quot;&gt;<br />
+&lt;i class=&quot;flag-icon flag-icon-ae&quot; title=&quot;ae&quot; id=&quot;ae&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;nav-language-text&quot;&gt;<br />
+&lt;p class=&quot;mb-1 text-black&quot;&gt;Arabic&lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item&quot; href=&quot;#&quot;&gt;<br />
+&lt;div class=&quot;nav-language-icon mr-2&quot;&gt;<br />
+&lt;i class=&quot;flag-icon flag-icon-gb&quot; title=&quot;GB&quot; id=&quot;gb&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;nav-language-text&quot;&gt;<br />
+&lt;p class=&quot;mb-1 text-black&quot;&gt;English&lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item nav-profile dropdown&quot;&gt;<br />
+&lt;a class=&quot;nav-link dropdown-toggle&quot; id=&quot;profileDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;<br />
+&lt;div class=&quot;nav-profile-img&quot;&gt;<br />
+&lt;img src=&quot;{% static 'Admin/assets/images/faces/face28.png' %}&quot; alt=&quot;image&quot;&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;nav-profile-text&quot;&gt;<br />
+&lt;p class=&quot;mb-1 text-black&quot;&gt;Henry Klein&lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-menu navbar-dropdown dropdown-menu-right p-0 border-0 font-size-sm&quot; aria-labelledby=&quot;profileDropdown&quot; data-x-placement=&quot;bottom-end&quot;&gt;<br />
+&lt;div class=&quot;p-3 text-center bg-primary&quot;&gt;<br />
+&lt;img class=&quot;img-avatar img-avatar48 img-avatar-thumb&quot; src=&quot;{% static 'Admin/assets/images/faces/face28.png' %}&quot; alt=&quot;&quot;&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;p-2&quot;&gt;<br />
+&lt;h5 class=&quot;dropdown-header text-uppercase pl-2 text-dark&quot;&gt;User Options&lt;/h5&gt;<br />
+&lt;a class=&quot;dropdown-item py-1 d-flex align-items-center justify-content-between&quot; href=&quot;#&quot;&gt;<br />
+&lt;span&gt;Inbox&lt;/span&gt;<br />
+&lt;span class=&quot;p-0&quot;&gt;<br />
+&lt;span class=&quot;badge badge-primary&quot;&gt;3&lt;/span&gt;<br />
+&lt;i class=&quot;mdi mdi-email-open-outline ml-1&quot;&gt;&lt;/i&gt;<br />
+&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;a class=&quot;dropdown-item py-1 d-flex align-items-center justify-content-between&quot; href=&quot;#&quot;&gt;<br />
+&lt;span&gt;Profile&lt;/span&gt;<br />
+&lt;span class=&quot;p-0&quot;&gt;<br />
+&lt;span class=&quot;badge badge-success&quot;&gt;1&lt;/span&gt;<br />
+&lt;i class=&quot;mdi mdi-account-outline ml-1&quot;&gt;&lt;/i&gt;<br />
+&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;a class=&quot;dropdown-item py-1 d-flex align-items-center justify-content-between&quot; href=&quot;javascript:void(0)&quot;&gt;<br />
+&lt;span&gt;Settings&lt;/span&gt;<br />
+&lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;div role=&quot;separator&quot; class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;h5 class=&quot;dropdown-header text-uppercase  pl-2 text-dark mt-2&quot;&gt;Actions&lt;/h5&gt;<br />
+&lt;a class=&quot;dropdown-item py-1 d-flex align-items-center justify-content-between&quot; href=&quot;#&quot;&gt;<br />
+&lt;span&gt;Lock Account&lt;/span&gt;<br />
+&lt;i class=&quot;mdi mdi-lock ml-1&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;a class=&quot;dropdown-item py-1 d-flex align-items-center justify-content-between&quot; href=&quot;#&quot;&gt;<br />
+&lt;span&gt;Log Out&lt;/span&gt;<br />
+&lt;i class=&quot;mdi mdi-logout ml-1&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;</p>
+<p>&lt;li class=&quot;nav-item dropdown&quot;&gt;<br />
+&lt;a class=&quot;nav-link count-indicator dropdown-toggle&quot; id=&quot;messageDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot; aria-expanded=&quot;false&quot;&gt;<br />
+&lt;i class=&quot;mdi mdi-email-outline&quot;&gt;&lt;/i&gt;<br />
+&lt;span class=&quot;count-symbol bg-success&quot;&gt;&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-menu dropdown-menu-right navbar-dropdown preview-list&quot; aria-labelledby=&quot;messageDropdown&quot;&gt;<br />
+&lt;h6 class=&quot;p-3 mb-0 bg-primary text-white py-4&quot;&gt;Messages&lt;/h6&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;img src=&quot;{% static 'Admin/assets/images/faces/face4.jpg' %}&quot; alt=&quot;image&quot; class=&quot;profile-pic&quot;&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject ellipsis mb-1 font-weight-normal&quot;&gt;Mark send you a message&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray mb-0&quot;&gt; 1 Minutes ago &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;img src=&quot;{% static 'Admin/assets/images/faces/face2.jpg' %}&quot; alt=&quot;image&quot; class=&quot;profile-pic&quot;&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject ellipsis mb-1 font-weight-normal&quot;&gt;Cregh send you a message&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray mb-0&quot;&gt; 15 Minutes ago &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;img src=&quot;{% static 'Admin/assets/images/faces/face3.jpg' %}&quot; alt=&quot;image&quot; class=&quot;profile-pic&quot;&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject ellipsis mb-1 font-weight-normal&quot;&gt;Profile picture updated&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray mb-0&quot;&gt; 18 Minutes ago &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;h6 class=&quot;p-3 mb-0 text-center&quot;&gt;4 new messages&lt;/h6&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item dropdown&quot;&gt;<br />
+&lt;a class=&quot;nav-link count-indicator dropdown-toggle&quot; id=&quot;notificationDropdown&quot; href=&quot;#&quot; data-toggle=&quot;dropdown&quot;&gt;<br />
+&lt;i class=&quot;mdi mdi-bell-outline&quot;&gt;&lt;/i&gt;<br />
+&lt;span class=&quot;count-symbol bg-danger&quot;&gt;&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-menu dropdown-menu-right navbar-dropdown preview-list&quot; aria-labelledby=&quot;notificationDropdown&quot;&gt;<br />
+&lt;h6 class=&quot;p-3 mb-0 bg-primary text-white py-4&quot;&gt;Notifications&lt;/h6&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;div class=&quot;preview-icon bg-success&quot;&gt;<br />
+&lt;i class=&quot;mdi mdi-calendar&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject font-weight-normal mb-1&quot;&gt;Event today&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray ellipsis mb-0&quot;&gt; Just a reminder that you have an event today &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;div class=&quot;preview-icon bg-warning&quot;&gt;<br />
+&lt;i class=&quot;mdi mdi-settings&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;</p>
+<p>&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject font-weight-normal mb-1&quot;&gt;Settings&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray ellipsis mb-0&quot;&gt; Update dashboard &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;a class=&quot;dropdown-item preview-item&quot;&gt;<br />
+&lt;div class=&quot;preview-thumbnail&quot;&gt;<br />
+&lt;div class=&quot;preview-icon bg-info&quot;&gt;<br />
+&lt;i class=&quot;mdi mdi-link-variant&quot;&gt;&lt;/i&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;div class=&quot;preview-item-content d-flex align-items-start flex-column justify-content-center&quot;&gt;<br />
+&lt;h6 class=&quot;preview-subject font-weight-normal mb-1&quot;&gt;Launch Admin&lt;/h6&gt;<br />
+&lt;p class=&quot;text-gray ellipsis mb-0&quot;&gt; New admin wow! &lt;/p&gt;<br />
+&lt;/div&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;dropdown-divider&quot;&gt;&lt;/div&gt;<br />
+&lt;h6 class=&quot;p-3 mb-0 text-center&quot;&gt;See all notifications&lt;/h6&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;button class=&quot;navbar-toggler navbar-toggler-right d-lg-none align-self-center&quot; type=&quot;button&quot; data-toggle=&quot;offcanvas&quot;&gt;<br />
+&lt;span class=&quot;mdi mdi-menu&quot;&gt;&lt;/span&gt;<br />
+&lt;/button&gt;<br />
+&lt;/div&gt;<br />
+&lt;/nav&gt;<br />
+&lt;!-- partial --&gt;<br />
+&lt;div class=&quot;container-fluid page-body-wrapper&quot;&gt;<br />
+&lt;!-- partial:partials/_sidebar.html --&gt;<br />
+&lt;nav class=&quot;sidebar sidebar-offcanvas&quot; id=&quot;sidebar&quot;&gt;<br />
+&lt;ul class=&quot;nav&quot;&gt;<br />
+&lt;li class=&quot;nav-item nav-category&quot;&gt;Main&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt;<br />
+&lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:adminhome' %}&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-cube menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Dashboard&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt;<br />
+&lt;a class=&quot;nav-link&quot; data-toggle=&quot;collapse&quot; href=&quot;#ui-basic&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ui-basic&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-crosshairs-gps menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Locations&lt;/span&gt;<br />
+&lt;i class=&quot;menu-arrow&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;collapse&quot; id=&quot;ui-basic&quot;&gt;<br />
+&lt;ul class=&quot;nav flex-column sub-menu&quot;&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:dist' %}&quot;&gt;Districts&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:Place' %}&quot;&gt;Place&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+<br />
+&lt;li class=&quot;nav-item&quot;&gt;<br />
+&lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:ViewFeed' %}&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-format-list-bulleted menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Feedback&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt;<br />
+&lt;a class=&quot;nav-link&quot; data-toggle=&quot;collapse&quot; href=&quot;#ui-basic&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;ui-basic&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-chart-bar menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Reports&lt;/span&gt;<br />
+&lt;i class=&quot;menu-arrow&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;collapse&quot; id=&quot;ui-basic&quot;&gt;<br />
+&lt;ul class=&quot;nav flex-column sub-menu&quot;&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;&quot;&gt;Report 1&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;&quot;&gt;Re&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt;<br />
+&lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:Workshop' %}&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-table-large menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Workshop&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt;</p>
+<p>&lt;a class=&quot;nav-link&quot; data-toggle=&quot;collapse&quot; href=&quot;#cmp&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;cmp&quot;&gt;<br />
+&lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-contacts menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Complaints&lt;/span&gt;<br />
+&lt;i class=&quot;menu-arrow&quot;&gt;&lt;/i&gt;<br />
+&lt;/a&gt;<br />
+&lt;div class=&quot;collapse&quot; id=&quot;cmp&quot;&gt;<br />
+&lt;ul class=&quot;nav flex-column sub-menu&quot;&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:ViewComp' %}&quot;&gt;User Complaint&lt;/a&gt;&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:ViewCompd' %}&quot;&gt;Director Complaint&lt;/a&gt;&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;</p>
+<p> &lt;li class=&quot;nav-item&quot;&gt;<br />
+  &lt;a class=&quot;nav-link&quot; data-toggle=&quot;collapse&quot; href=&quot;#wrkshp&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;wrkshp&quot;&gt;<br />
+  &lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-contacts menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+  &lt;span class=&quot;menu-title&quot;&gt;Workshop Applications&lt;/span&gt;<br />
+  &lt;i class=&quot;menu-arrow&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;div class=&quot;collapse&quot; id=&quot;wrkshp&quot;&gt;<br />
+  &lt;ul class=&quot;nav flex-column sub-menu&quot;&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:view_workshops' %}&quot;&gt;Applications&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:view_accepted' %}&quot;&gt;Accepted&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;{% url 'webadmin:view_rejected' %}&quot;&gt;Rejected&lt;/a&gt;&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/li&gt;</p>
+<p> &lt;li class=&quot;nav-item&quot;&gt;<br />
+  &lt;a class=&quot;nav-link&quot; href=&quot;pages/tables/basic-table.html&quot;&gt;<br />
+  &lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-table-large menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+  &lt;span class=&quot;menu-title&quot;&gt;Tables&lt;/span&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt;<br />
+  &lt;a class=&quot;nav-link&quot; data-toggle=&quot;collapse&quot; href=&quot;#auth&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;auth&quot;&gt;<br />
+  &lt;span class=&quot;icon-bg&quot;&gt;&lt;i class=&quot;mdi mdi-lock menu-icon&quot;&gt;&lt;/i&gt;&lt;/span&gt;<br />
+  &lt;span class=&quot;menu-title&quot;&gt;User Pages&lt;/span&gt;<br />
+  &lt;i class=&quot;menu-arrow&quot;&gt;&lt;/i&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;div class=&quot;collapse&quot; id=&quot;auth&quot;&gt;<br />
+  &lt;ul class=&quot;nav flex-column sub-menu&quot;&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;pages/samples/blank-page.html&quot;&gt; Blank Page &lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;pages/samples/login.html&quot;&gt; Login &lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;pages/samples/register.html&quot;&gt; Register &lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;pages/samples/error-404.html&quot;&gt; 404 &lt;/a&gt;&lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item&quot;&gt; &lt;a class=&quot;nav-link&quot; href=&quot;pages/samples/error-500.html&quot;&gt; 500 &lt;/a&gt;&lt;/li&gt;<br />
+  &lt;/ul&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item documentation-link&quot;&gt;<br />
+  &lt;a class=&quot;nav-link&quot; href=&quot;&quot; target=&quot;_blank&quot;&gt;<br />
+  &lt;span class=&quot;icon-bg&quot;&gt;<br />
+  &lt;i class=&quot;mdi mdi-file-document-box menu-icon&quot;&gt;&lt;/i&gt;<br />
+  &lt;/span&gt;<br />
+  &lt;span class=&quot;menu-title&quot;&gt;Documentation&lt;/span&gt;<br />
+  &lt;/a&gt;<br />
+  &lt;/li&gt;<br />
+  &lt;li class=&quot;nav-item sidebar-user-actions&quot;&gt;<br />
+  &lt;div class=&quot;user-details&quot;&gt;<br />
+  &lt;div class=&quot;d-flex justify-content-between align-items-center&quot;&gt;<br />
+  &lt;div&gt;<br />
+  &lt;div class=&quot;d-flex align-items-center&quot;&gt;<br />
+  &lt;div class=&quot;sidebar-profile-img&quot;&gt;<br />
+  &lt;img src=&quot;{% static 'Admin/assets/images/faces/face28.png' %}&quot; alt=&quot;image&quot;&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;div class=&quot;sidebar-profile-text&quot;&gt;<br />
+  &lt;p class=&quot;mb-1&quot;&gt;Henry Klein&lt;/p&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;</p>
+<p>&lt;div class=&quot;badge badge-danger&quot;&gt;3&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item sidebar-user-actions&quot;&gt;<br />
+&lt;div class=&quot;sidebar-user-menu&quot;&gt;<br />
+&lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;&lt;i class=&quot;mdi mdi-settings menu-icon&quot;&gt;&lt;/i&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Settings&lt;/span&gt;<br />
+&lt;/a&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item sidebar-user-actions&quot;&gt;<br />
+&lt;div class=&quot;sidebar-user-menu&quot;&gt;<br />
+&lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;&lt;i class=&quot;mdi mdi-speedometer menu-icon&quot;&gt;&lt;/i&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Take Tour&lt;/span&gt;&lt;/a&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;li class=&quot;nav-item sidebar-user-actions&quot;&gt;<br />
+&lt;div class=&quot;sidebar-user-menu&quot;&gt;<br />
+&lt;a href=&quot;#&quot; class=&quot;nav-link&quot;&gt;&lt;i class=&quot;mdi mdi-logout menu-icon&quot;&gt;&lt;/i&gt;<br />
+&lt;span class=&quot;menu-title&quot;&gt;Log Out&lt;/span&gt;&lt;/a&gt;<br />
+&lt;/div&gt;<br />
+&lt;/li&gt;<br />
+&lt;/ul&gt;<br />
+&lt;/nav&gt;<br />
+&lt;!-- partial --&gt;<br />
+&lt;div class=&quot;main-panel&quot;&gt;<br />
+&lt;div class=&quot;content-wrapper&quot;&gt;</p>
+<p> {% block content %}<br />
+</p>
+<p> {% endblock content %}<br />
+</p>
+<p> &lt;/div&gt;<br />
+  &lt;!-- content-wrapper ends --&gt;<br />
+  &lt;!-- partial:partials/_footer.html --&gt;<br />
+  &lt;footer class=&quot;footer&quot;&gt;<br />
+  &lt;div class=&quot;footer-inner-wraper&quot;&gt;<br />
+  &lt;div class=&quot;d-sm-flex justify-content-center justify-content-sm-between&quot;&gt;<br />
+  &lt;span class=&quot;text-muted d-block text-center text-sm-left d-sm-inline-block&quot;&gt;Copyright © bootstrapdash.com 2020&lt;/span&gt;<br />
+  &lt;span class=&quot;float-none float-sm-right d-block mt-1 mt-sm-0 text-center&quot;&gt; Free &lt;a href=&quot;https://www.bootstrapdash.com/&quot; target=&quot;_blank&quot;&gt;Bootstrap dashboard templates&lt;/a&gt; from Bootstrapdash.com&lt;/span&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;/footer&gt;<br />
+  &lt;!-- partial --&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;!-- main-panel ends --&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;!-- page-body-wrapper ends --&gt;<br />
+  &lt;/div&gt;<br />
+  &lt;!-- container-scroller --&gt;<br />
+  &lt;!-- plugins:js --&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/vendors/js/vendor.bundle.base.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;!-- endinject --&gt;<br />
+  &lt;!-- Plugin js for this page --&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/vendors/chart.js/Chart.min.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/vendors/jquery-circle-progress/js/circle-progress.min.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;!-- End plugin js for this page --&gt;<br />
+  &lt;!-- inject:js --&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/js/off-canvas.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/js/hoverable-collapse.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/js/misc.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;!-- endinject --&gt;<br />
+  &lt;!-- Custom js for this page --&gt;<br />
+  &lt;script src=&quot;{% static 'Admin/assets/js/dashboard.js' %}&quot;&gt;&lt;/script&gt;<br />
+  &lt;!-- End custom js for this page --&gt;<br />
+  &lt;/body&gt;<br />
+  &lt;/html&gt;</p>
+</body>
+</html>
